@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .image-upload>input {
+            display: none;
+        }
+    </style>
+    <title>Form</title>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="form-container-right"></div>
+        <form action="" id="form" onchange="control('form')" onkeyup="control('form')">
+            <div style="position: relative;" class="form-container">
+
+                <div style="color: var(--main-color); border-bottom: 2px solid var(--main-color);padding-bottom:5px;">
+                    Kişisel Bilgiler</div>
+                <br>
+                <div class="grid-container">
+
+                    <div style="position: relative;" class="image-upload">
+                        <label for="file-input" style="position: absolute;left: 32px; top:26.1px; z-index: 9999;" >
+                            <i id="camera" style=" color: var(--main-color); font-size: 45px; position: relative;left: 3px;" class="fa-solid fa-camera"></i>
+
+                            <img id="profile-photo" style="position: absolute;left: -25px;top: -27px; object-fit: fill;" width="100" height="100"  alt="">
+                        </label>
+
+                        <input id="file-input" onchange="imageUploaded()" type="file" />
+                        
+                    </div>
+                    <div class="left">
+                        <div class="input-data">
+                            <input id="name-input" type="text" onkeypress="return strControl(event)" required>
+                            <label  class="label">İsim</label>
+                        </div>
+                        <br>
+                        <div class="input-data">
+                            <input id="surname-input" type="text" onkeypress="return strControl(event)" required>
+                            <label class="label">Soy İsim</label>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div id="adres-inp-border" class="input-data">
+                    <input id="adres-input" type="text" onkeypress="return strControl(event)" required>
+                    <label class="label" id="adres-label">Adres</label>
+                </div>
+                <br>
+                <div class="flex-container">
+                    <div id="mail-inp-border" style="margin-right: 10px ;" class="input-data">
+                        <input id="email-input" type="text" required>
+                        <label class="label" id="mail-label">E posta</label>
+                    </div>
+                    <br>
+                    <div class="input-data">
+                        <input type="tel" id="phone-input" name="phone-input" placeholder="(###) ###-####"
+                            maxlength="14" onkeypress="return numberControl(event)" required>
+                        <label class="label">Telefon Numarası</label>
+                    </div>
+                </div>
+                <br>
+                <div class="flex-container">
+                    <div style="margin-right: 10px ;" class="input-data">
+                        <input id="input-postaKodu" type="text" maxlength="5" onkeypress="return numberControl(event)" required>
+                        <label class="label">Posta Kodu</label>
+                    </div>
+                    <br>
+                    <div style="width: 100%;">
+                        <select id="city-select" class="citySelect input-data" required>
+                            <option value="">Sehir seçimi</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <button id="btn"
+                    style="position: absolute; bottom: 0px; left: 0px;height: 35px; width: 100%; border-bottom-right-radius: 25px; border: none;color: #fff; font-size: 1.2rem; font-weight: 500;"
+                    type="button" disabled>Kaydet</button>
+            </div>
+        </form>
+
+
+        <script src="js/script.js"></script>
+</body>
+
+</html>
